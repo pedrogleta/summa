@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "migration:create": "migrate create -ext sql -dir ./migrations -seq $1",
+    "migration:up": "dotenv -e .env.local migrate -path ./migrations -database \"$DATABASE_URL\" up",
+    "migration:down": "dotenv -e .env.local migrate -path ./migrations -database \"$DATABASE_URL\" down"
   },
   "dependencies": {
     "@langchain/openai": "^1.0.0",
@@ -22,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv-cli": "^11.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
     "tailwindcss": "^4",
