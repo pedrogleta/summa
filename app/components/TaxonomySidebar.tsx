@@ -5,23 +5,8 @@ import TaxonomyTile from './TaxonomyTile';
 
 export default function TaxonomySidebar() {
   return (
-    <div
-      style={{
-        width: '300px',
-        borderRight: '1px solid rgba(255, 255, 255, 0.1)',
-        height: '100vh',
-        overflowY: 'auto',
-        padding: '16px',
-      }}
-    >
-      <h2
-        style={{
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: 'white',
-          marginBottom: '16px',
-        }}
-      >
+    <div className="w-[300px] border-r border-white/10 h-screen overflow-y-auto p-4">
+      <h2 className="text-lg font-bold text-white mb-4">
         Knowledge Taxonomy
       </h2>
       <div>

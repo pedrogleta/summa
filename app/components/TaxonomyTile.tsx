@@ -54,16 +54,9 @@ export default function TaxonomyTile({ node, level }: TaxonomyTileProps) {
         onClick={handleClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        className="pr-2 py-1.5 cursor-pointer rounded flex items-center gap-2"
         style={{
           paddingLeft: `${getPaddingLeft()}px`,
-          paddingRight: '8px',
-          paddingTop: '6px',
-          paddingBottom: '6px',
-          cursor: 'pointer',
-          borderRadius: '4px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
         }}
         animate={{
           backgroundColor: isHovered ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
@@ -74,22 +67,17 @@ export default function TaxonomyTile({ node, level }: TaxonomyTileProps) {
           <motion.div
             animate={{ rotate: isExpanded ? 90 : 0 }}
             transition={{ duration: 0.2 }}
-            style={{
-              fontSize: '10px',
-              lineHeight: 1,
-              color: 'white',
-            }}
+            className="text-[10px] leading-none text-white"
           >
             ▶
           </motion.div>
         )}
         <div
+          className="text-white transition-opacity duration-150"
           style={{
             fontSize: getFontSize(),
             fontWeight: getFontWeight(),
             opacity: getOpacity(),
-            color: 'white',
-            transition: 'opacity 0.15s',
           }}
         >
           {node.title}
@@ -103,7 +91,7 @@ export default function TaxonomyTile({ node, level }: TaxonomyTileProps) {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            style={{ overflow: 'hidden' }}
+            className="overflow-hidden"
           >
             {node.children!.map((child, index) => (
               <TaxonomyTile key={index} node={child} level={level + 1} />
