@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "migration:create": "migrate create -ext sql -dir ./migrations -seq $1",
-    "migration:up": "dotenv -e .env.local migrate -path ./migrations -database \"$DATABASE_URL\" up",
-    "migration:down": "dotenv -e .env.local migrate -path ./migrations -database \"$DATABASE_URL\" down"
+    "migration:up": "dotenv -e .env.local -o -- sh -c 'migrate -path ./migrations -database \"$DATABASE_URL\" up'",
+    "migration:down": "dotenv -e .env.local -o -- sh -c 'migrate -path ./migrations -database \"$DATABASE_URL\" down'"
   },
   "dependencies": {
     "@langchain/openai": "^1.0.0",
