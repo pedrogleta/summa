@@ -1,0 +1,3 @@
+- [x] Parse ISCED fields into inital Taxonomy structure
+- [x] Create Taxonomy view
+- [] Create Dependency Graph view
