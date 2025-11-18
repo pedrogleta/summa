@@ -1,0 +1,24 @@
+tasks:
+  algebra:
+    name: Algebra
+    
+  functions:
+    name: Functions
+    depends_on:
+      - algebra
+
+  limits:
+    name: Limits
+    depends_on:
+      - functions
+
+  derivatives:
+    name: Derivatives
+    depends_on:
+      - limits
+      
+  lhopitals-rule:
+    name: L'Hôpital's Rule
+    depends_on:
+      - derivatives
+      - limits
