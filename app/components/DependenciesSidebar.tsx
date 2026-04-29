@@ -136,7 +136,7 @@ export default function DependenciesSidebar() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col border-r border-white/10">
+    <div className="h-screen overflow-hidden flex flex-col border-l border-r border-white/10">
       <div className="p-4 border-b border-white/10 flex-shrink-0">
         <h2 className="text-lg font-bold text-white">
           Learning Dependencies
