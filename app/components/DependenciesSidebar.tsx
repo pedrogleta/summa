@@ -136,8 +136,8 @@ export default function DependenciesSidebar() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   return (
-    <div className="w-[300px] border-r border-white/10 h-screen overflow-hidden">
-      <div className="p-4 border-b border-white/10">
+    <div className="h-screen overflow-hidden flex flex-col border-r border-white/10">
+      <div className="p-4 border-b border-white/10 flex-shrink-0">
         <h2 className="text-lg font-bold text-white">
           Learning Dependencies
         </h2>
@@ -145,7 +145,7 @@ export default function DependenciesSidebar() {
           L&apos;Hôpital&apos;s Rule
         </p>
       </div>
-      <div className="h-[calc(100vh-80px)]">
+      <div className="h-[calc(100vh-80px)] flex-1">
         <ReactFlow
           nodes={nodes}
           edges={edges}
