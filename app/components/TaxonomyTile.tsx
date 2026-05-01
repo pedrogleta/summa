@@ -7,9 +7,10 @@ import { TaxonomyNode } from '../types/taxonomy';
 interface TaxonomyTileProps {
   node: TaxonomyNode;
   level: number;
+  onSelect?: (term: string) => void;
 }
 
-export default function TaxonomyTile({ node, level }: TaxonomyTileProps) {
+export default function TaxonomyTile({ node, level, onSelect }: TaxonomyTileProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -19,7 +20,10 @@ export default function TaxonomyTile({ node, level }: TaxonomyTileProps) {
     if (hasChildren) {
       setIsExpanded(!isExpanded);
     } else {
-      console.log(`Selected: ${node.title}`);
+      // Call parent callback when selecting a leaf node
+      if (onSelect) {
+        onSelect(node.title);
+      }
     }
   };
 
@@ -94,7 +98,7 @@ export default function TaxonomyTile({ node, level }: TaxonomyTileProps) {
             className="overflow-hidden"
           >
             {node.children!.map((child, index) => (
-              <TaxonomyTile key={index} node={child} level={level + 1} />
+              <TaxonomyTile key={index} node={child} level={level + 1} onSelect={onSelect} />
             ))}
           </motion.div>
         )}
