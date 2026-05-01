@@ -63,7 +63,7 @@ export default function TaxonomyTile({ node, level, onSelect }: TaxonomyTileProp
           paddingLeft: `${getPaddingLeft()}px`,
         }}
         animate={{
-          backgroundColor: isHovered ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
+          backgroundColor: isHovered ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0)',
         }}
         transition={{ duration: 0.15 }}
       >
